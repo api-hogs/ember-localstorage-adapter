@@ -158,7 +158,7 @@
         results.push(Ember.copy(record));
       }
 
-      if (results.get('length') && allowRecursive) {
+      if (results.length && allowRecursive) {
         return this.loadRelationshipsForMany(model, results);
       } else {
         return Ember.RSVP.resolve(results);
