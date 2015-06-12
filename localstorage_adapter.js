@@ -181,7 +181,7 @@
     //    { complete: true, name: /foo|bar/ }
     findQuery: function (store, model, query, recordArray) {
       var namespace = this._namespaceForType(model);
-      var results = this.query(namespace.records, query);
+      var results = Ember.A(this.query(namespace.records, query));
 
       if (results.get('length')) {
         return this.loadRelationshipsForMany(model, results);
